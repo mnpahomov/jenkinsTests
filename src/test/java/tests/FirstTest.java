@@ -3,10 +3,11 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FirstTest {
+public class FirstTest extends Main {
 
     @Test
     public void sumTest() {
-        Assert.assertEquals(1,1);
+        int x = gcd(6, 4);
+        Assert.assertEquals(x,2);
     }
 }
