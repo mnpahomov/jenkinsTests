@@ -1,11 +1,15 @@
 package tests;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("GSD " + gcd(3, 5));
         int[] a = {3, 2, 5, 6, 4};
         System.out.println("O(1) " + o1(a));
+        System.out.println("Find Factors " + findFactors(1357));
     }
 
     public static int gcd(int a, int b) {
@@ -31,5 +35,28 @@ public class Main {
             return last;
         }
         return half;
+    }
+
+    public static List<Integer> findFactors(int number) {
+        System.out.println("Numder: " + number);
+        List<Integer> factors = new ArrayList<Integer>();
+        while (number % 2 == 0) {
+            factors.add(2);
+            number = number/2;
+        }
+        int i = 3;
+        int maxFactor = (int) Math.sqrt(number);
+        while (i <= maxFactor) {
+            while (number % i == 0) {
+                factors.add(i);
+                number = number/i;
+                maxFactor = (int) Math.sqrt(number);
+            }
+            i = i + 2;
+        }
+        if (number > 1) {
+            factors.add(number);
+        }
+        return factors;
     }
 }
