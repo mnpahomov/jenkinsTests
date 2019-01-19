@@ -3,6 +3,10 @@ package tests;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author maxim
+ */
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,6 +16,12 @@ public class Main {
         System.out.println("Find Factors " + findFactors(1357));
     }
 
+    /**
+     * My first method javadoc comment
+     * @param a Number A
+     * @param b NumberB
+     * @return Return GCD
+     */
     public static int gcd(int a, int b) {
         while (b != 0) {
             int reminder = a % b;
@@ -22,6 +32,11 @@ public class Main {
         return a;
     }
 
+    /**
+     * Method find half number
+     * @param array Array test numbers
+     * @return Return half number
+     */
     public static int o1(int[] array) {
         int first = array[0];
         int lastIndex = array.length - 1;
